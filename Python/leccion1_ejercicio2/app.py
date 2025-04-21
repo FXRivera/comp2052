@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Lista simula base de datos de mensajes
-mensajes = {"Mensaje ejemplo"}
+mensajes = ["Mensaje ejemplo"]
 
 # Ruta GET que devuelve información básica del servidor
 @app.route("/info", methods=["GET"])
