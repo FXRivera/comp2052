@@ -23,6 +23,7 @@ def mensaje():
         data = request.json
         if not data or "mensaje" not in data:
             return jsonify({"error": "Falta campo 'mesaje'"}), 400
+        
         mensajes.append(data["mensaje"])
         return jsonify({"respuesta": f"Mensaje recibido: '{data['mensaje']}"}), 201
     if __name__ == '__main__':
