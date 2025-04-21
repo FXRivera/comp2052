@@ -26,5 +26,6 @@ def mensaje():
         
         mensajes.append(data["mensaje"])
         return jsonify({"respuesta": f"Mensaje recibido: '{data['mensaje']}"}), 201
+    
     if __name__ == '__main__':
         app.run(debug=True)
