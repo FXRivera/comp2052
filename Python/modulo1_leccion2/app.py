@@ -9,8 +9,8 @@ mensajes = ["Mensaje ejemplo"]
 @app.route("/info", methods=["GET"])
 def info():
     return jsonify({
-        'version de prueba': "1.0",
-        'usuario': 'Francis X. Rivera Torres'
+        "versión de prueba: ": "1.0",
+        "usuario: ": "Francis X. Rivera Torres"
     })
 
 # Ruta GET y POST que maneja los mensajes
@@ -22,10 +22,10 @@ def mensaje():
     if request.method == "POST":
         data = request.json
         if not data or "mensaje" not in data:
-            return jsonify({"error": "Falta campo 'mesaje'"}), 400
+            return jsonify({"error: ", "Falta campo 'mensaje'"}), 400
         
         mensajes.append(data["mensaje"])
-        return jsonify({"respuesta": f"Mensaje recibido: '{data['mensaje']}"}), 201
+        return jsonify({"respuesta: ": f"Mensaje recibido: {data['mensaje']}"}), 201
     
-    if __name__ == '__main__':
-        app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
