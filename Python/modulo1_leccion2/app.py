@@ -3,14 +3,19 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Lista simula base de datos de mensajes
-mensajes = ["Mensaje ejemplo"]
+mensajes = []
+
+# Ruta principal
+@app.route("/")
+def main():
+    return "<h1>Mensaje de ejemplo<h1>"
 
 # Ruta GET que devuelve información básica del servidor
 @app.route("/info", methods=["GET"])
 def info():
     return jsonify({
         "versión de prueba: ": "1.0",
-        "usuario: ": "Francis X. Rivera Torres"
+        "usuario ": "Francis X. Rivera Torres"
     })
 
 # Ruta GET y POST que maneja los mensajes
